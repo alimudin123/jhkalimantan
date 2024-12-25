@@ -101,22 +101,22 @@
         </div>
 
         <!-- Jenis Produk -->
-        <div class="product-section">
+        <div class="product-section-jp">
             <h1>Produk</h1>
             <p>Temukan produk yang sesuai dengan gaya dan kebutuhan Anda karena kami percaya, Anda layak mendapatkan yang terbaik!</p>
-            <div class="product-container">
-                <div class="product-item">
-                    <img src="images/dompet.jpg" alt="Dompet" class="product-image">
+            <div class="product-container-jp">
+                <div class="product-item-jp">
+                    <img src="images/dompet.jpg" alt="Dompet" class="product-image-jp">
                     <h2>Dompet</h2>
                     <p>Praktis dan elegan, dirancang untuk menemani aktivitas sehari-hari. Desain modern, material berkualitas, dan ruang yang pas untuk semua kebutuhan Anda.</p>
                 </div>
-                <div class="product-item">
-                    <img src="images/tas.jpg" alt="Tas" class="product-image">
+                <div class="product-item-jp">
+                    <img src="images/tas.jpg" alt="Tas" class="product-image-jp">
                     <h2>Tas</h2>
                     <p>Kombinasi sempurna antara fungsi dan fashion. Koleksi tas kami hadir dengan desain stylish, material tahan lama, dan ruang yang luas untuk menunjang aktivitas Anda.</p>
                 </div>
-                <div class="product-item">
-                    <img src="images/jt-jhw23.jpg" alt="Jam Tangan" class="product-image">
+                <div class="product-item-jp">
+                    <img src="images/jt-jhw23.jpg" alt="Jam Tangan" class="product-image-jp">
                     <h2>Jam Tangan</h2>
                     <p>Lebih dari sekadar penunjuk waktu, jam tangan kami melengkapi penampilan Anda dengan sentuhan elegan dan berkelas. Tampil percaya diri kapan saja dan di mana saja.</p>
                 </div>
@@ -133,15 +133,13 @@
                 <!-- Kotak Produk 1 -->
                 <div class="product-item-bs">
                     <img src="images/w-kalu.jpg" alt="Produk 1" class="product-image-bs">
-                    <h2>Moly Wallet</h2>
+                    <h3 class="nama-bs">Moly Wallet</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 100.000</p>
-                        <p>Rating: 4.5</p>
+                        <p class="harga">Rp 100.000</p>
+                        <p class="rating">★ 4.5</p>
                     </div>
-                    <div class="peilaian-bs">
-                        <p>150+ Penilaian</p>
-                    </div>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">150+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 20</p>
@@ -151,13 +149,13 @@
                 <!-- Kotak Produk 2 -->
                 <div class="product-item-bs">
                     <img src="images/b-adeline.jpg" alt="Produk 2" class="product-image-bs">
-                    <h2>Adeline Bag</h2>
+                    <h3 class="nama-bs">Adeline Bag</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 200.000</p>
-                        <p>Rating: 4.0</p>
+                        <p>Rp 200.000</p>
+                        <p>★ 4.0</p>
                     </div>
-                    <p>100+ Penilaian</p>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">100+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 15</p>
@@ -167,13 +165,13 @@
                 <!-- Kotak Produk 3 -->
                 <div class="product-item-bs">
                     <img src="images/jt-jhw23.jpg" alt="Produk 3" class="product-image-bs">
-                    <h2>JHW 23</h2>
+                    <h3 class="nama-bs">JHW 23</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 150.000</p>
-                        <p>Rating: 4.8</p>
+                        <p>Rp 150.000</p>
+                        <p>★ 4.8</p>
                     </div>
-                    <p>200+ Penilaian</p>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">200+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 25</p>
@@ -183,13 +181,13 @@
                 <!-- Kotak Produk 4 -->
                 <div class="product-item-bs">
                     <img src="images/b-kindy.jpg" alt="Produk 4" class="product-image-bs">
-                    <h2>Kindy Bag</h2>
+                    <h3 class="nama-bs">Kindy Bag</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 120.000</p>
-                        <p>Rating: 4.2</p>
+                        <p>Rp 120.000</p>
+                        <p>★ 4.2</p>
                     </div>
-                    <p>80+ Penilaian</p>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">80+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 10</p>
@@ -199,13 +197,13 @@
                 <!-- Kotak Produk 5 -->
                 <div class="product-item-bs">
                     <img src="images/jt-jhw30.jpg" alt="Produk 5" class="product-image-bs">
-                    <h2>JHW 30</h2>
+                    <h3 class="nama-bs">JHW 30</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 180.000</p>
-                        <p>Rating: 4.9</p>
+                        <p>Rp 180.000</p>
+                        <p>★ 4.9</p>
                     </div>
-                    <p>300+ Penilaian</p>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">300+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 5</p>
@@ -215,13 +213,13 @@
                 <!-- Kotak Produk 6 -->
                 <div class="product-item-bs">
                     <img src="images/w-ocha.jpg" alt="Produk 6" class="product-image-bs">
-                    <h2>Ocha Wallet</h2>
+                    <h3 class="nama-bs">Ocha Wallet</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 220.000</p>
-                        <p>Rating: 4.3</p>
+                        <p>Rp 220.000</p>
+                        <p>★ 4.3</p>
                     </div>
-                    <p>60+ Penilaian</p>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">60+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 8</p>
@@ -231,13 +229,13 @@
                 <!-- Kotak Produk 7 -->
                 <div class="product-item-bs">
                     <img src="images/b-zora.jpg" alt="Produk 7" class="product-image-bs">
-                    <h2>Zora Bag</h2>
+                    <h3 class="nama-bs">Zora Bag</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 250.000</p>
-                        <p>Rating: 4.6</p>
+                        <p>Rp 250.000</p>
+                        <p>★ 4.6</p>
                     </div>
-                    <p>90+ Penilaian</p>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">90+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 12</p>
@@ -247,13 +245,13 @@
                 <!-- Kotak Produk 8 -->
                 <div class="product-item-bs">
                     <img src="images/jt-jhw51.jpg" alt="Produk 8" class="product-image-bs">
-                    <h2>JHW 51</h2>
+                    <h3 class="nama-bs">JHW 51</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 130.000</p>
-                        <p>Rating: 4.1</p>
+                        <p>Rp 130.000</p>
+                        <p>★ 4.1</p>
                     </div>
-                    <p>110+ Penilaian</p>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">110+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 18</p>
@@ -263,13 +261,13 @@
                 <!-- Kotak Produk 9 -->
                 <div class="product-item-bs">
                     <img src="images/b-axel-waist.jpg" alt="Produk 9" class="product-image-bs">
-                    <h2>Axel Waist Bag</h2>
+                    <h3 class="nama-bs">Axel Waist Bag</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 160.000</p>
-                        <p>Rating: 4.7</p>
+                        <p>Rp 160.000</p>
+                        <p>★ 4.7</p>
                     </div>
-                    <p>130+ Penilaian</p>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">130+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 22</p>
@@ -279,13 +277,13 @@
                 <!-- Kotak Produk 10 -->
                 <div class="product-item-bs">
                     <img src="images/w-sharla.jpg" alt="Produk 10" class="product-image-bs">
-                    <h2>Sharla Wallet</h2>
+                    <h3 class="nama-bs">Sharla Wallet</h3>
                     <hr class="divider-bs">
                     <div class="product-price-rating-bs">
-                        <p>Harga: Rp 190.000</p>
-                        <p>Rating: 4.4</p>
+                        <p>Rp 190.000</p>
+                        <p>★ 4.4</p>
                     </div>
-                    <p>140+ Penilaian</p>
+                    <p class="penilaian-bs" style="margin: 5px 0; font-size: 12px; margin-left: auto; font-family: 'Kanit', sans-serif;">140+ Penilaian</p>
                     <hr class="divider-bs">
                     <div class="product-stock-sales-bs">
                         <p>Stok: 7</p>
@@ -297,9 +295,10 @@
 
     </main>
 
-    <footer>
-        <p>&copy; 2024 Jims Honey | Kalimantan. All rights reserved.</p>
+    <footer style="text-align: center; padding: 5px 10px; background-color: #333; color: #fff; margin: 0; height: auto; box-sizing: border-box;">
+        <p style="margin: 0; font-size: 14px; line-height: 1.4;">&copy; 2024 Jims Honey Kalimantan. All rights reserved.</p>
     </footer>
+
 </body>
 
 </html>

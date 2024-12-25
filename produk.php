@@ -116,7 +116,7 @@ $filteredProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         <div class="product-info">
                             <p class="price">Rp <?= number_format($product['harga'], 0, ',', '.') ?></p>
-                            <p class="rating"><?= $product['rating'] ?></p>
+                            <p class="rating">★ <?= $product['rating'] ?></p>
                         </div>
 
                         <div class="penilaian">
