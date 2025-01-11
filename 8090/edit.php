@@ -1,5 +1,28 @@
 <?php
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
+
 include 'config.php';
+
+// Fungsi untuk mengupload gambar
+function uploadImage($file) {
+    $allowedExtensions = ['jpg', 'jpeg', 'png', 'gif'];
+    $fileName = basename($file['name']);
+    $fileExtension = strtolower(pathinfo($fileName, PATHINFO_EXTENSION));
+    $targetDir = 'uploads/';
+    $targetFile = $targetDir . uniqid() . '.' . $fileExtension;
+
+    if (!in_array($fileExtension, $allowedExtensions)) {
+        return ['status' => 'error', 'message' => 'Format gambar tidak diizinkan.'];
+    }
+
+    if (move_uploaded_file($file['tmp_name'], $targetFile)) {
+        return ['status' => 'success', 'filePath' => $targetFile];
+    } else {
+        return ['status' => 'error', 'message' => 'Gagal mengunggah gambar.'];
+    }
+}
 
 if (isset($_GET['id'])) {
     $id = $_GET['id'];
@@ -31,24 +54,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_product'])) {
     }
 
     // Mengatur nilai rating, penilaian, dan penjualan
-    // Jika input kosong, gunakan nilai lama dari database
-    if ($productRating === '') {
-        $productRating = $product['rating']; // Tetap menggunakan nilai lama jika kosong
-    } elseif ($productRating < 0) {
-        $productRating = 0; // Set ke 0 jika nilai kurang dari 0
-    }
-
-    if ($productReviews === '') {
-        $productReviews = $product['penilaian']; // Tetap menggunakan nilai lama jika kosong
-    } elseif ($productReviews < 0) {
-        $productReviews = 0; // Set ke 0 jika nilai kurang dari 0
-    }
-
-    if ($productSold === '') {
-        $productSold = $product['penjualan']; // Tetap menggunakan nilai lama jika kosong
-    } elseif ($productSold < 0) {
-        $productSold = 0; // Set ke 0 jika nilai kurang dari 0
-    }
+    $productRating = ($productRating < 0) ? 0 : $productRating; // Pastikan rating tidak negatif
+    $productReviews = ($productReviews < 0) ? 0 : $productReviews; // Pastikan jumlah penilaian tidak negatif
+    $productSold = ($productSold < 0) ? 0 : $productSold; // Pastikan jumlah penjualan tidak negatif
 
     $filePath = $product['foto']; // Simpan path gambar lama
     if (isset($_FILES['productImage']) && $_FILES['productImage']['error'] === UPLOAD_ERR_OK) {
@@ -66,9 +74,16 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_POST['update_product'])) {
 
     if (empty($errors)) {
         $stmt = $pdo->prepare("UPDATE produk SET nama = ?, harga = ?, stok = ?, foto = ?, rating = ?, penilaian = ?, penjualan = ?, kategori = ?, gender = ?, deskripsi = ?, link = ? WHERE id = ?");
-        $stmt->execute([$productName, $productPrice, $productStock, $filePath, $productRating, $productReviews, $productSold, $productCategory, $productGender, $productDescription, $productLink, $id]);
-        header("Location: tambah_barang.php");
-        exit;
+        if ($stmt->execute([$productName, $productPrice, $productStock, $filePath, $productRating, $productReviews, $productSold, $productCategory, $productGender, $productDescription, $productLink, $id])) {
+            header("Location: tambah_barang.php");
+            exit;
+        } else {
+            echo "Gagal memperbarui produk.";
+        }
+    } else {
+        foreach ($errors as $error) {
+            echo "<p class='error'>$error</p>";
+        }
     }
 }
 ?>
