@@ -1,53 +1,98 @@
+/* Header */
+header {
+    position: sticky;
+    top: 0;
+    padding: 10px 20px; 
+    z-index: 1000; 
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    height: 60px; /* Atur tinggi header */
+}
 
+.logo-image1 {
+    height: 100%; /* Pastikan logo memenuhi tinggi header */
+    max-height: 50px; /* Tetapkan batas maksimal tinggi logo */
+    width: auto; /* Menyesuaikan lebar proporsional */
+    object-fit: contain; /* Menjaga proporsi logo */
+    margin: 0; /* Hilangkan margin tambahan */
+}
 
-        header {
-            position: sticky;
-            top: 0;
-            padding: 10px 20px; 
-            z-index: 1000; 
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            background-color: white;
-            padding: 20px;
-            box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
-        }
+nav {
+    display: inline-block;
+    float: right; 
+}
 
-        .logo1 {
-            display: inline-block;
-        }
+nav ul {
+    list-style: none; 
+    padding: 0;
+}
 
-        .logo-image1 {
-            height: 30px; 
-            width: auto;
-        }
+nav ul li {
+    display: inline; 
+    margin-left: 20px;
+}
 
-        nav {
-            display: inline-block;
-            float: right; 
-        }
+nav ul li a {
+    text-decoration: none; 
+    color: #000000; 
+}
 
-        nav ul {
-            list-style: none; 
-            padding: 0;
-        }
+.list a {
+    transition: background-color 0.3s, padding 0.3s, color 0.3s; /* Menggabungkan transisi */
+}
 
-        nav ul li {
-            display: inline; 
-            margin-left: 20px;
-        }
+.list a:hover {
+    background-color: #ffe3e3;
+    color: #000000;
+    padding: 10px 15px;
+    border-radius: 5px;
+}
 
-        nav ul li a {
-            text-decoration: none; 
-            color: #000000; 
-        }
+nav ul li.active a {
+    color: #000;
+}
 
-        nav ul li.active a {
-            color: #000;
-        }
+/* Konten */
+.content {
+    padding: 20px;
+    height: 2000px; /* Untuk demonstrasi, bisa diubah sesuai kebutuhan */
+    background-color: #f9f9f9; 
+}
 
-        .content {
-            padding: 20px;
-            height: 2000px;
-            background-color: #f9f9f9; 
-        }
+/* Media Queries untuk Responsivitas */
+@media (max-width: 768px) {
+    header {
+        flex-direction: column; /* Mengubah arah flex untuk ponsel */
+        align-items: flex-start; /* Menyelaraskan item ke kiri */
+    }
+
+    nav {
+        float: none; /* Menghilangkan float pada navigasi */
+        width: 100%; /* Membuat navigasi memenuhi lebar */
+    }
+
+    nav ul {
+        display: flex;
+        flex-direction: column; /* Mengubah menjadi kolom untuk ponsel */
+        width: 100%; /* Membuat ul memenuhi lebar */
+    }
+
+    nav ul li {
+        margin-left: 0; /* Menghilangkan margin kiri */
+        margin-bottom: 10px; /* Menambahkan jarak antar item */
+    }
+}
+
+@media (max-width: 480px) {
+    header {
+        height: auto; /* Mengatur tinggi header otomatis */
+        padding: 10px; /* Mengurangi padding */
+    }
+
+    .logo-image1 {
+        max-height: 40px; /* Mengurangi tinggi maksimum logo untuk ponsel kecil */
+    }
+}

@@ -1,6 +1,6 @@
 <?php
 session_start();
-$conn = new mysqli('localhost', 'root', 'admin123', 'admin'); // Update with your DB credentials
+$conn = new mysqli('localhost', 'root', 'admin123', 'admin'); 
 
 if ($conn->connect_error) {
     die("Connection failed: " . $conn->connect_error);

@@ -56,6 +56,8 @@ $filteredProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Produk</title>
+    <link rel="icon" href="./images/logojhk.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="produk.css">
     <link rel="stylesheet" href="h-style.css">
@@ -67,15 +69,19 @@ $filteredProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 <body>
     <header>
         <div class="logo1">
-            <img src="images/logojhk" alt="Jims Honey Kalimantan" class="logo-image1">
+            <a href="index.php">
+                <img src="images/logojhk.png" alt="Jims Honey Kalimantan" class="logo-image1">
+            </a>
         </div>
         <nav>
-            <ul>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+            <ul class="list" id="menu">
                 <li><a href="index.php">Beranda</a></li>
                 <li><a href="belanja.php">Belanja</a></li>
                 <li class="active"><a href="produk.php">Produk</a></li>
                 <li><a href="tk.php">Tentang Kami</a></li>
                 <li><a href="hk.php">Hubungi Kami</a></li>
+                <li><a href="pengguna/user_akun.php">Akun</a></li>
             </ul>
         </nav>
     </header>
@@ -108,7 +114,7 @@ $filteredProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         <div class="product-container-p" id="productContainer">
             <?php if (count($filteredProducts) > 0): ?>
                 <?php foreach ($filteredProducts as $product): ?>
-                    <div class="product-item-p" data-kategori="<?= strtolower($product['kategori']) ?>" data-harga="<?= $product['harga'] ?>">
+                    <div class="product-item-p" data-kategori="<?= strtolower($product['kategori']) ?>" data-harga="<?= $product['harga'] ?>" data-id="<?= $product['id'] ?>">
                         <?php $imagePath = "8090/" . $product['foto']; ?>
                         <img src="<?= $imagePath ?>" alt="Foto Produk" class="product-image-p">
                         <h3 class="product-name"><?= htmlspecialchars($product['nama']) ?></h3>
@@ -125,7 +131,7 @@ $filteredProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                         <div class="divider-p"></div>
 
-                        <div class="product-stock-sales">
+                        <div class="product-stock-sales-p">
                             <p class="stock">Stok: <?= $product['stok'] ?></p>
                             <div class="sales-rating">
                                 <p class="sales">Penjualan: <?= $product['penjualan'] ?></p>
@@ -138,6 +144,19 @@ $filteredProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
             <?php endif; ?>
         </div>
     </div>
+
+    <script>
+        // Menambahkan event listener untuk mengarahkan ke halaman detail produk
+        document.getElementById('productContainer').addEventListener('click', function(event) {
+            // Cek apakah elemen yang diklik adalah item produk
+            const productItem = event.target.closest('.product-item-p');
+            if (productItem) {
+                const productId = productItem.getAttribute('data-id');
+                // Arahkan ke halaman detail produk dengan ID produk
+                window.location.href = `produk_detail.php?id=${productId}`;
+            }
+        });
+    </script>
 
     <script>
         // Fungsi untuk memfilter produk berdasarkan input pencarian, kategori, dan rentang harga
@@ -173,7 +192,7 @@ $filteredProducts = $stmt->fetchAll(PDO::FETCH_ASSOC);
         }
     </script>
     <script src="produk.js"></script>
-
+    <script src="burger.js"></script>
 </body>
 
 </html>

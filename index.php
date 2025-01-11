@@ -5,10 +5,17 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jims Honey Kalimantan</title>
+    <link rel="icon" href="./images/logojhk.png" type="image/png">
+    <link href="https://fonts.googleapis.com/css2?family=Kanit&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="style.css">
     <link rel="stylesheet" href="h-style.css">
+    <link rel="stylesheet" href="produk.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
+        body {
+            background-color: white;
+        }
+
         h1 {
             text-align: center;
             font-size: 2.5em;
@@ -32,26 +39,31 @@
 <body>
     <header>
         <div class="logo1">
-            <img src="images/logojhk" alt="Jims Honey Kalimantan" class="logo-image1">
+            <a href="index.php">
+                <img src="images/logojhk.png" alt="Jims Honey Kalimantan" class="logo-image1">
+            </a>
         </div>
         <nav>
-            <ul>
+            <div class="burger-menu" onclick="toggleMenu()">&#9776;</div>
+            <ul class="list" id="menu">
                 <li class="active"><a href="index.php">Beranda</a></li>
                 <li><a href="belanja.php">Belanja</a></li>
                 <li><a href="produk.php">Produk</a></li>
                 <li><a href="tk.php">Tentang Kami</a></li>
                 <li><a href="hk.php">Hubungi Kami</a></li>
+                <li><a href="pengguna/user_akun.php">Akun</a></li>
             </ul>
         </nav>
     </header>
 
     <main>
+
         <!-- Gamabar Beranda -->
         <div class="image-gallery">
-            <img src="images/model1.png" alt="Model 1" class="gallery-image">
-            <img src="images/model2.png" alt="Model 2" class="gallery-image">
-            <img src="images/model3.png" alt="Model 3" class="gallery-image">
-            <img src="images/model4.png" alt="Model 4" class="gallery-image">
+            <a href="produk.php"><img src="images/model1.png" alt="Model 1" class="gallery-image"></a>
+            <a href="produk.php"><img src="images/model2.png" alt="Model 2" class="gallery-image"></a>
+            <a href="produk.php"><img src="images/model3.png" alt="Model 3" class="gallery-image"></a>
+            <a href="produk.php"><img src="images/model4.png" alt="Model 4" class="gallery-image"></a>
         </div>
 
         <!-- Bagian Pencarian -->
@@ -62,11 +74,11 @@
                 </div>
                 <div class="input-wrapper">
                     <select id="category" name="category">
-                        <option value="">Kategori:</option>
-                        <option value="">Semua</option>
-                        <option value="tas">Tas</option>
-                        <option value="jam_tangan">Jam Tangan</option>
-                        <option value="dompet">Dompet</option>
+                        <option value="" class="item">Kategori:</option>
+                        <option value="" class="item">Semua</option>
+                        <option value="tas" class="item">Tas</option>
+                        <option value="jam_tangan" class="item">Jam Tangan</option>
+                        <option value="dompet" class="item">Dompet</option>
                     </select>
                 </div>
                 <div class="input-wrapper">
@@ -85,15 +97,15 @@
                 <div class="image-container">
                     <img src="images/model4.png" alt="Model4">
                 </div>
-                <div class="text-container" style="flex: 2;">
-                    <h1 style="font-size: 2em; margin: 0;">YOU DESERVE THE BEST</h1>
+                <div class="text-container">
+                    <h1 class="judul-text">YOU DESERVE THE BEST</h1>
                     <p style="font-size: 1.2em; margin: 10px 0;">
                         Setiap orang pasti ingin yang terbaik, dan kami di sini untuk mewujudkannya. Mulai dari produk berkualitas, layanan yang ramah, hingga pengalaman yang bikin nyaman, semua kami siapkan khusus buat kamu. Karena buat kami, kepuasan kamu adalah nomor satu.
                     </p>
                     <p style="font-size: 1.2em; margin: 10px 0;">
                         Jadi, kenapa pilih yang biasa aja kalau kamu bisa dapat yang terbaik? Yuk, cari tahu lebih banyak dan rasakan bedanya!
                     </p>
-                    <a href="tk.php" style="display: inline-block; padding: 10px 20px; background-color: black; color: white; border-radius: 10px; text-decoration: none; font-size: 1em;">
+                    <a href="tk.php" style="display: inline-block; padding: 10px 20px; background-color: black; color: white; border-radius: 10px; text-decoration: none; font-size: 1em;  transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out; box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1)">
                         Pelajari Lebih Lanjut
                     </a>
                 </div>
@@ -103,7 +115,7 @@
         <!-- Jenis Produk -->
         <div class="product-section-jp">
             <h1>Produk</h1>
-            <p>Temukan produk yang sesuai dengan gaya dan kebutuhan Anda karena kami percaya, Anda layak mendapatkan yang terbaik!</p>
+            <p class="product-section-jp-p">Temukan produk yang sesuai dengan gaya dan kebutuhan Anda karena kami percaya, Anda layak mendapatkan yang terbaik!</p>
             <div class="product-container-jp">
                 <div class="product-item-jp">
                     <img src="images/dompet.jpg" alt="Dompet" class="product-image-jp">
@@ -300,5 +312,6 @@
     </footer>
 
 </body>
+<script src="burger.js"></script>
 
 </html>
