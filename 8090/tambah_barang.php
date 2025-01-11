@@ -1,5 +1,7 @@
 <?php
 include 'config.php';
+include 'config.php';
+//tes
 
 // Fungsi untuk mengupload gambar
 function uploadImage($file)
